@@ -9,19 +9,47 @@
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             text-align: center;
-        }
-        h1 {
-            color: #333;
+            padding: 20px;
         }
         .container {
-            margin-top: 50px;
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>مرحبًا بك في موقع تسديد رصيد يمن موبايل</h1>
-        <p>قم بإدخال رقم هاتفك والمبلغ المطلوب.</p>
+        <h1>تسديد رصيد يمن موبايل</h1>
+        <label for="phone">رقم الهاتف:</label>
+        <input type="text" id="phone" placeholder="أدخل رقم الهاتف">
+        
+        <label for="amount">المبلغ:</label>
+        <input type="number" id="amount" placeholder="أدخل المبلغ">
+
+        <button onclick="pay()">تسديد الرصيد</button>
+
+        <p id="result"></p>
     </div>
+
+    <script src="app.js"></script>
 </body>
 </html>
