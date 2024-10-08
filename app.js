@@ -27,10 +27,12 @@ async function pay() {
 
         const result = await response.json();
 
+        console.log(result); // تسجيل الاستجابة
+
         if (response.ok) {
             document.getElementById("result").textContent = `تم تسديد رصيد بقيمة ${amount} ريال لرقم الهاتف ${phone}.`;
         } else {
-            document.getElementById("result").textContent = `حدث خطأ: ${result.message}`;
+            document.getElementById("result").textContent = `حدث خطأ: ${result.message || result.error}`;
         }
 
     } catch (error) {
@@ -66,14 +68,16 @@ async function checkBalance() {
 
         const result = await response.json();
 
+        console.log(result); // تسجيل الاستجابة
+
         if (response.ok) {
             document.getElementById("balanceResult").textContent = `رصيد رقم الهاتف ${phone} هو: ${result.balance} ريال.`;
         } else {
-            document.getElementById("balanceResult").textContent = `حدث خطأ: ${result.message}`;
+            document.getElementById("balanceResult").textContent = `حدث خطأ: ${result.message || result.error}`;
         }
 
     } catch (error) {
         document.getElementById("balanceResult").textContent = "حدث خطأ أثناء محاولة الاستعلام عن الرصيد.";
         console.error(error);
     }
-    }
+            }
