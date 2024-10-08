@@ -39,6 +39,7 @@
 <body>
     <div class="container">
         <h1>تسديد رصيد يمن موبايل</h1>
+        
         <label for="phone">رقم الهاتف:</label>
         <input type="text" id="phone" placeholder="أدخل رقم الهاتف">
         
@@ -47,7 +48,11 @@
 
         <button onclick="pay()">تسديد الرصيد</button>
 
+        <h2>الاستعلام عن الرصيد</h2>
+        <button onclick="checkBalance()">استعلام عن الرصيد</button>
+
         <p id="result"></p>
+        <p id="balanceResult"></p>
     </div>
 
     <script src="app.js"></script>
