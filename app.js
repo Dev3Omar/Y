@@ -25,6 +25,11 @@ async function pay() {
             body: JSON.stringify(requestData)
         });
 
+        if (!response.ok) {
+            const errorResponse = await response.text();
+            console.error("Error response from API:", errorResponse);
+        }
+
         const result = await response.json();
 
         console.log(result); // تسجيل الاستجابة
@@ -37,7 +42,7 @@ async function pay() {
 
     } catch (error) {
         document.getElementById("result").textContent = "حدث خطأ أثناء محاولة التسديد.";
-        console.error(error);
+        console.error("Error during API request:", error);
     }
 }
 
@@ -78,6 +83,6 @@ async function checkBalance() {
 
     } catch (error) {
         document.getElementById("balanceResult").textContent = "حدث خطأ أثناء محاولة الاستعلام عن الرصيد.";
-        console.error(error);
+        console.error("Error during API request:", error);
     }
             }
